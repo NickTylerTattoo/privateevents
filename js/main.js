@@ -197,9 +197,10 @@ addEventListener('load', () => setTimeout(hideLoader, 1200));
     return;
   }
 
-  /* canvas scrub across the whole 340vh track */
+  /* canvas scrub across the whole 340vh track PLUS the exit — 'bottom top'
+     keeps the orbit turning while the unpinned hero rides up out of frame */
   ScrollTrigger.create({
-    trigger: hero, start: 'top top', end: 'bottom bottom', scrub: true,
+    trigger: hero, start: 'top top', end: 'bottom top', scrub: true,
     onUpdate: st => orbit.progress(st.progress)
   });
 
